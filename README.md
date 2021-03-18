@@ -12,7 +12,7 @@ Data looks like this:
 - metrics (Clicks, Impressions)
 
 
-# Host
+# Hosting
 Hosted on AWS   
 http://simpledatawarehouse-env.eba-mfdpazxy.eu-central-1.elasticbeanstalk.com
 
@@ -34,7 +34,8 @@ Examples of queries:
 filters:
 "dataSource" param could be equal some value
 "campaign" param could be equal some value
-"dateFrom" and "dateTo" param serve for period filtering 
+"dateFrom" and "dateTo" params are for period filtering, default Date format is "MM/dd/yy", 
+but it possible to set it with "dateFormat" param, f.i. "dateTo=17-11-2019&dateFormat=dd-MM-yyyy"
 
 Queries are generic, but all dimensions and metrics are predefine in code, along with one calculated metric (click-throgh-rate). 
 Introducing of another calculated metric will be quite easy - just need to implement formula and bind it with parameter name. 
