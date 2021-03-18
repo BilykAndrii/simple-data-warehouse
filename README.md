@@ -49,6 +49,8 @@ filters:
 "dateFrom" and "dateTo" params are for period filtering, default Date format is "MM/dd/yy",   
 but it possible to set it with "dateFormat" param, f.i. "dateTo=17-11-2019&dateFormat=dd-MM-yyyy"  
 
+All unknown parameters will be ignored  
+
 Queries are generic, but all dimensions and metrics are predefine in code,   
 along with one calculated metric (click-throgh-rate).   
 Introducing of another calculated metric will be quite easy,   
