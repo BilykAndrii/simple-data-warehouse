@@ -23,6 +23,8 @@ http://simpledatawarehouse-env.eba-mfdpazxy.eu-central-1.elasticbeanstalk.com/ap
 ## File uploading  
 CSV file could be uploaded as multipart-file by POST to "/upload" and persisted in embedded DB  
 Two optional parameters: "header" ("true" if file contain header) and "dateFormat" (needed for parsing dates)  
+File is validated against "text/csv" Content Type  
+
 It's possible to upload file/files many times  
 DB has Primary Key contains from [Datasource, Campaign, Date], so data could be overwritten  
 
@@ -31,6 +33,9 @@ Example of queries:
 GET /api/metrics/query?metrics=impressions&groupedBy=date    
 GET /api/metrics/query?metrics=ctr&groupedBy=dataSource,campaign    
 GET /api/metrics/query?metrics=clicks&groupedBy=dataSource&dataSource=Twitter Ads&dateFrom=11/17/19&dateTo=11/19/19  
+
+Also there is one endpoint to get all records (not filtered and not aggregated)  
+GET /api/metrics/all  
 
 ### Parameters
 "metrics" param could have one of {clicks, impressions, ctr} values  
@@ -47,6 +52,6 @@ but it possible to set it with "dateFormat" param, f.i. "dateTo=17-11-2019&dateF
 Queries are generic, but all dimensions and metrics are predefine in code,   
 along with one calculated metric (click-throgh-rate).   
 Introducing of another calculated metric will be quite easy,   
-just need to implement formula and bind it with parameter name.   
+just need to implement formula and bind it with parameter name     
 
 
