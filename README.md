@@ -24,7 +24,8 @@ GET "/api/info" returns info about application
 
 ## File uploading  
 CSV file could be uploaded as multipart-file by POST to "/upload" and persisted in embedded DB  
-Two optional parameters: "header" ("true" if file contain header) and "dateFormat" (needed for parsing dates)  
+Mandatory param "dateFormat" (it needs for parsing dates correctly)      
+Optional parameter "header" ("true" if file contain header)  
 File is validated against "text/csv" Content Type  
 
 It's possible to upload file/files many times  
