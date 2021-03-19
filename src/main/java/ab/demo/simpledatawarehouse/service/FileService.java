@@ -23,7 +23,7 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 public class FileService {
 
     @Autowired
-    CampaignMetricRepository metricsRepository;
+    private CampaignMetricRepository metricsRepository;
 
     public int saveData(MultipartFile uploadedFile, boolean header, String dateFormat) {
         try {
@@ -53,11 +53,9 @@ public class FileService {
     }
 
     private void saveMetric(List<CampaignMetric> metrics, String[] line, String dateFormat) {
-
         if (isBlank(line[0])) {
             return;
         }
-
         try {
             CampaignMetric metric = CampaignMetric.builder()
                     .dataSource(line[0])
@@ -68,6 +66,7 @@ public class FileService {
                     .build();
 
             metrics.add(metric);
+
         } catch (Exception ex) {
             log.debug(ex.getMessage());
         }

@@ -85,8 +85,8 @@ public class MetricsService {
 
         List<String> calculatedMetrics = queryParameters.getCalculatedMetrics();
         calculatedMetrics.forEach(calculatedMetric -> {
-            if (!isNull(MetricsCalculator.formulas.get(calculatedMetric))) {
-                fetchedMetrics.forEach(MetricsCalculator.formulas.get(calculatedMetric));
+            if (!isNull(MetricsCalculator.getFormulas().get(calculatedMetric))) {
+                fetchedMetrics.forEach(MetricsCalculator.getFormulas().get(calculatedMetric));
             }
         });
     }

@@ -14,10 +14,14 @@ import static java.util.Objects.isNull;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MetricsCalculator {
 
-    static final Map<String, Consumer<CampaignMetric>> formulas;
+    private static final Map<String, Consumer<CampaignMetric>> formulas;
     static {
         formulas = new HashMap<>();
         formulas.put(CLICK_THROUGH_RATE, getClickThroughRateFormula());
+    }
+
+    public static Map<String, Consumer<CampaignMetric>> getFormulas() {
+        return formulas;
     }
 
     private static Consumer<CampaignMetric> getClickThroughRateFormula() {
