@@ -20,6 +20,8 @@ http://simpledatawarehouse-env.eba-mfdpazxy.eu-central-1.elasticbeanstalk.com
 Swagger UI visualization 
 http://simpledatawarehouse-env.eba-mfdpazxy.eu-central-1.elasticbeanstalk.com/api/swagger-ui/index.html
 
+GET "/api/info" returns info about application  
+
 ## File uploading  
 CSV file could be uploaded as multipart-file by POST to "/upload" and persisted in embedded DB  
 Two optional parameters: "header" ("true" if file contain header) and "dateFormat" (needed for parsing dates)  
